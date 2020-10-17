@@ -19,7 +19,7 @@ class Deck:
             for value in [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" ]:
                 card = Card(value, suit)
                 self.cards.append(card)
-
+             
     def shuffle(self ):
         pass
 
@@ -29,6 +29,19 @@ class Deck:
             s2 = card.__str__()
             s = s + "\n" + s2
         return s
+
+
+class Player:
+    def __init__(self):
+        pass
+    def __str__(self):
+        pass
+
+class Dealer:
+    def __init__(self):
+        pass
+    def __str__(self):
+        pass
 
 
 deck = Deck()
