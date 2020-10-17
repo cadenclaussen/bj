@@ -8,7 +8,29 @@ class Card:
         self.visibility = False
 
     def __str__(self):
-        return self.suit + " " + str(self.value) + " " + str(self.visibility)
+
+        value2 = self.value
+        if self.value == "J":
+            value2 = "Jack"
+        elif self.value == "Q":
+            value2 = "Queen"
+        elif self.value == "K":
+            value2 = "King"
+        elif self.value == "A":
+            value2 = "Ace"
+
+
+        suit2 = self.suit
+        if self.suit == "S":
+            suit2 = "Spades"
+        elif self.suit == "C":
+            suit2 = "Clubs"
+        elif self.suit == "D":
+            suit2 = "Diamonds"
+        elif self.suit == "H":
+            suit2 = "Hearts"
+       
+        return str(value2) + " of " + suit2 
 
 
 class Deck:
@@ -20,8 +42,13 @@ class Deck:
                 card = Card(value, suit)
                 self.cards.append(card)
              
-    def shuffle(self ):
-        pass
+    def shuffle(self):
+        shuffledCards = []
+        for _ in range(52):
+            card = random.choice(self.cards)
+            self.cards.remove(card)
+            shuffledCards.append(card)
+        self.cards = shuffledCards
 
     def __str__(self):
         s = ""
